@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Theme Switcher -->
+        <div class="theme-switcher">
+            <button class="theme-btn" id="themeToggle" onclick="toggleThemeMenu()">
+                <span class="theme-icon">🎨</span>
+                <span>Theme</span>
+            </button>
+            <div class="theme-menu" id="themeMenu">
+                <button class="theme-option" data-theme="light" onclick="setTheme('light')">
+                    <span class="theme-preview light-preview"></span>
+                    <span>Light</span>
+                </button>
+                <button class="theme-option" data-theme="dark" onclick="setTheme('dark')">
+                    <span class="theme-preview dark-preview"></span>
+                    <span>Dark</span>
+                </button>
+                <button class="theme-option" data-theme="dark-blue" onclick="setTheme('dark-blue')">
+                    <span class="theme-preview dark-blue-preview"></span>
+                    <span>Dark Blue</span>
+                </button>
+                <button class="theme-option" data-theme="dark-green" onclick="setTheme('dark-green')">
+                    <span class="theme-preview dark-green-preview"></span>
+                    <span>Dark Green</span>
+                </button>
+                <button class="theme-option" data-theme="dark-red" onclick="setTheme('dark-red')">
+                    <span class="theme-preview dark-red-preview"></span>
+                    <span>Dark Red</span>
+                </button>
+                <button class="theme-option" data-theme="pink" onclick="setTheme('pink')">
+                    <span class="theme-preview pink-preview"></span>
+                    <span>Pink</span>
+                </button>
+                <button class="theme-option" data-theme="purple" onclick="setTheme('purple')">
+                    <span class="theme-preview purple-preview"></span>
+                    <span>Purple</span>
+                </button>
+                <button class="theme-option" data-theme="orange" onclick="setTheme('orange')">
+                    <span class="theme-preview orange-preview"></span>
+                    <span>Orange</span>
+                </button>
+                <button class="theme-option" data-theme="high-contrast" onclick="setTheme('high-contrast')">
+                    <span class="theme-preview high-contrast-preview"></span>
+                    <span>High Contrast</span>
+                </button>
+            </div>
+        </div>
+
+        <h1>Student GPA/CGPA Calculator</h1>
+
+        <!-- Controls section for selecting the grading system -->
+        <div class="controls">
+            <label><strong>Select Grading System:</strong></label>
+            <select id="gradingSystem">
+                <option value="AUS">Australia (HD=4.0, D=3.0, C = 2.0, P = 1.0, F = 0.0)</option>
+                <option value="MY">Malaysia (HD=4.0, D=3.67, C = 3.00, P = 2.33, F = 0.00)</option>
+            </select>
+        </div>
+
+        <!-- This container will be dynamically filled with semester blocks -->
+        <div id="semesters-container">
+            <!-- Semesters will be added here -->
+        </div>
+
+        <!-- Main action buttons -->
+        <div class="action-buttons">
+            <button class="btn-add-sem" onclick="addSemester()">+ Add Semester</button>
+            <button class="btn-calc" onclick="calculateGPA()">Calculate GPA & CGPA</button>
+            <button class="btn-clear" onclick="clearData()">Clear All Data</button>
+        </div>
+
+        <!-- Results section (hidden by default) -->
+        <div id="results-container" class="hidden">
+            <h2>Results</h2>
+            <p><strong>Grading System Used:</strong> <span id="system-used"></span></p>
+            
+            <!-- Chart Container -->
+            <div id="cgpa-chart-container" class="chart-container"></div>
+            
+            <!-- Comment Section -->
+            <div id="comment-container" class="comment-section"></div>
+            
+            <div id="semester-results">
+                <!-- Semester results will be inserted here -->
+            </div>
+
+            <div class="summary">
+                <strong>Overall CGPA: <span id="final-cgpa">0.00</span></strong>
+            </div>
+
+            <button class="back-btn" onclick="showCalculator()">Calculate Again</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
