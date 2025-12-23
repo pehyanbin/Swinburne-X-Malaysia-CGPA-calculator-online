@@ -512,7 +512,7 @@ function renderCGPAChart(data) {
             tooltip.transition()
                 .duration(200)
                 .style("opacity", .9);
-            tooltip.html(`<strong>Semester ${d.semesterIndex}</strong><br/>CGPA: ${d.cumulativeCGPA.toFixed(2)}`)
+            tooltip.html(`<strong>Semester ${d.semesterIndex}</strong><br/><span class="highlight-cgpa">CGPA: ${d.cumulativeCGPA.toFixed(2)}</span><br/>GPA: ${d.gpa.toFixed(2)}`)
                 .style("left", (event.pageX) + "px")
                 .style("top", (event.pageY - 28) + "px");
         })
@@ -537,7 +537,7 @@ function renderCGPAChart(data) {
             tooltip.transition()
                 .duration(200)
                 .style("opacity", .9);
-            tooltip.html(`<strong>Semester ${d.semesterIndex}</strong><br/>GPA: ${d.gpa.toFixed(2)}`)
+            tooltip.html(`<strong>Semester ${d.semesterIndex}</strong><br/>CGPA: ${d.cumulativeCGPA.toFixed(2)}<br/><span class="highlight-gpa">GPA: ${d.gpa.toFixed(2)}</span>`)
                 .style("left", (event.pageX) + "px")
                 .style("top", (event.pageY - 28) + "px");
         })

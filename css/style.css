@@ -742,6 +742,16 @@ button:active {
     z-index: 1000;
 }
 
+.chart-tooltip .highlight-cgpa {
+    color: var(--border-accent);
+    font-weight: bold;
+}
+
+.chart-tooltip .highlight-gpa {
+    color: var(--gpa-badge);
+    font-weight: bold;
+}
+
 /* ==========================================
    Summary Section
    ========================================== */
