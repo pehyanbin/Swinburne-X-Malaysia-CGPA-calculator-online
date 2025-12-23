@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student GPA/CGPA Calculator</h1>
+
+        <!-- Controls section for selecting the grading system -->
+        <div class="controls">
+            <label><strong>Select Grading System:</strong></label>
+            <select id="gradingSystem">
+                <option value="AUS">Australia (HD=4.0, D=3.0...)</option>
+                <option value="MY">Malaysia (HD=4.0, D=3.67...)</option>
+            </select>
+        </div>
+
+        <!-- This container will be dynamically filled with semester blocks -->
+        <div id="semesters-container">
+            <!-- Semesters will be added here -->
+        </div>
+
+        <!-- Main action buttons -->
+        <div class="action-buttons">
+            <button class="btn-add-sem" onclick="addSemester()">+ Add Semester</button>
+            <button class="btn-calc" onclick="calculateGPA()">Calculate GPA & CGPA</button>
+            <button class="btn-clear" onclick="clearData()">Clear All Data</button>
+        </div>
+
+        <!-- Results section (hidden by default) -->
+        <div id="results-container" class="hidden">
+            <h2>Results</h2>
+            <p><strong>Grading System Used:</strong> <span id="system-used"></span></p>
+            
+            <div id="semester-results">
+                <!-- Semester results will be inserted here -->
+            </div>
+
+            <div class="summary">
+                <strong>Overall CGPA: <span id="final-cgpa">0.00</span></strong>
+            </div>
+
+            <button class="back-btn" onclick="showCalculator()">Calculate Again</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
